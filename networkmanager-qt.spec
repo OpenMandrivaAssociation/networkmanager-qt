@@ -16,13 +16,12 @@ BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: cmake(KF5DocTools)
-BuildRequires: cmake(Qt5Test)
+BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(Qt5Network)
+BuildRequires: pkgconfig(libnm-util)
+BuildRequires: pkgconfig(libnm-glib)
+BuildRequires: pkgconfig(NetworkManager)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5DBus)
-BuildRequires: cmake(Qt5Widgets)
-BuildRequires: cmake(KF5Parts)
-BuildRequires: cmake(KF5XmlGui)
 BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
