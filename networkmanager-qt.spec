@@ -6,7 +6,7 @@
 
 Name: networkmanager-qt
 Version: 5.8.0
-Release: 1
+Release: 2
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Qt style wrapper of the NetworkManager API
 URL: http://kde.org/
@@ -25,6 +25,7 @@ BuildRequires: pkgconfig(NetworkManager)
 BuildRequires: cmake(ECM)
 BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
+%rename libnm-qt5 < 1:5.1.2-3
 
 %description
 This package provides a nice Qt style API to work with NetworkManager.
@@ -32,6 +33,7 @@ This package provides a nice Qt style API to work with NetworkManager.
 %package -n %{libname}
 Summary: Qt style wrapper of the NetworkManager API
 Group: System/Libraries
+%rename %{_lib}KF5NetworkManagerQt5 < 1:5.1.2-3
 
 %description -n %{libname}
 This package provides a nice Qt style API to work with NetworkManager.
@@ -41,6 +43,7 @@ This package provides a nice Qt style API to work with NetworkManager.
 Summary: Development files for the KDE Frameworks 5 NetworkManager library
 Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
+%rename %{_lib}KF5NetworkManagerQt-devel < 1:5.1.2-3
 
 %description -n %{devname}
 Development files for the KDE Frameworks 5 NetworkManager library.
