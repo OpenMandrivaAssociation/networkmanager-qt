@@ -6,15 +6,13 @@
 
 Name: networkmanager-qt
 Version: 5.9.0
-Release: 1
+Release: 2
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Qt style wrapper of the NetworkManager API
 URL: http://kde.org/
 License: LGPL v2.1
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: extra-cmake-modules5
+BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Network)
@@ -23,8 +21,6 @@ BuildRequires: pkgconfig(libnm)
 BuildRequires: pkgconfig(libnm-util)
 BuildRequires: pkgconfig(libnm-glib)
 BuildRequires: pkgconfig(NetworkManager)
-BuildRequires: cmake(ECM)
-BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 %rename libnm-qt5 < 1:5.1.2-3
 
@@ -44,6 +40,7 @@ This package provides a nice Qt style API to work with NetworkManager.
 Summary: Development files for the KDE Frameworks 5 NetworkManager library
 Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
+Requires: pkgconfig(NetworkManager)
 %rename %{_lib}KF5NetworkManagerQt-devel < 1:5.1.2-3
 
 %description -n %{devname}
@@ -53,14 +50,13 @@ This package provides a nice Qt style API to work with NetworkManager.
 
 %prep
 %setup -q
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+%ninja_install -C build
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
