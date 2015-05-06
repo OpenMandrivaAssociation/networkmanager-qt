@@ -6,7 +6,7 @@
 
 Name: networkmanager-qt
 Version: 5.9.0
-Release: 2
+Release: 3
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Qt style wrapper of the NetworkManager API
 URL: http://kde.org/
@@ -17,7 +17,6 @@ BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Network)
 BuildRequires: pkgconfig(Qt5Test)
-BuildRequires: pkgconfig(libnm)
 BuildRequires: pkgconfig(libnm-util)
 BuildRequires: pkgconfig(libnm-glib)
 BuildRequires: pkgconfig(NetworkManager)
