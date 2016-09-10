@@ -3,6 +3,10 @@
 %define devname %mklibname KF5NetworkManagerQt -d
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%ifarch x86_64
+# Workaround for clang crash at link time last verified in 4.0.0-0.281115.1
+%define _disable_lto 1
+%endif
 
 Name: networkmanager-qt
 Version: 5.26.0
