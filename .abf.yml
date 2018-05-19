@@ -1,4 +1,2 @@
-removed_sources:
-  networkmanager-qt-5.13.0.tar.xz: e6c0d15052b4d3ac11a4aa5a2431e4d153750344
 sources:
-  networkmanager-qt-5.44.0.tar.xz: 640ca9863e94bd0ffcc4a027cc781017bbf29430
+  networkmanager-qt-5.46.0.tar.xz: d69a7ba41985109f4f9dded121877cdcdf232c3b
