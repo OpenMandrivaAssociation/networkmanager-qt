@@ -10,7 +10,7 @@
 
 Name: networkmanager-qt
 Version: 5.47.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Qt style wrapper of the NetworkManager API
 URL: http://kde.org/
