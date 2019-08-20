@@ -3,14 +3,10 @@
 %define devname %mklibname KF5NetworkManagerQt -d
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%ifarch x86_64
-# Workaround for clang crash at link time last verified in 4.0.0-0.281115.1
-%define _disable_lto 1
-%endif
 
 Name: networkmanager-qt
 Version: 5.61.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Qt style wrapper of the NetworkManager API
 URL: http://kde.org/
@@ -67,7 +63,7 @@ Suggests: %{devname} = %{EVRD}
 Developer documentation for %{name} for use with Qt Assistant
 
 %prep
-%setup -q
+%autosetup -p1
 %cmake_kde5
 
 %build
