@@ -40,10 +40,7 @@ This package provides a nice Qt style API to work with NetworkManager.
 Summary: Development files for the KDE Frameworks 5 NetworkManager library
 Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
-Requires: pkgconfig(NetworkManager)
 Requires: pkgconfig(libnm)
-Requires: pkgconfig(libnm-util)
-Requires: pkgconfig(libnm-glib)
 %rename %{_lib}KF5NetworkManagerQt-devel
 
 %description -n %{devname}
