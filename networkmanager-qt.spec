@@ -29,7 +29,7 @@ This package provides a nice Qt style API to work with NetworkManager.
 %package -n %{libname}
 Summary: Qt style wrapper of the NetworkManager API
 Group: System/Libraries
-Obsoletes: %{_lib}KF5NetworkManagerQt5
+Obsoletes:KF5NetworkManagerQt5 < %{EVRD}
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
